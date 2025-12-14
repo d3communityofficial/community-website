@@ -8,6 +8,8 @@ import TechStackCard from './components/TechStackCard';
 import SocialCard from './components/SocialCard';
 import MissionLogs from './components/MissionLogs';
 import TeamSection from './components/TeamSection';
+import CommunityPartners from './components/CommunityPartners';
+import Sponsors from './components/Sponsors';
 
 export default function Home() {
   return (
@@ -32,6 +34,12 @@ export default function Home() {
           <MissionLogs />
           <TeamSection />
         </div>
+
+        {/* Community Partners Section */}
+        <CommunityPartners />
+
+        {/* Sponsors Section */}
+        <Sponsors />
       </div>
     </>
   );

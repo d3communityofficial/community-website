@@ -1,4 +1,4 @@
-import { Github, Twitter } from "lucide-react";
+import { Github, Twitter, Linkedin, Youtube, Instagram, CalendarDays } from "lucide-react";
 
 export default function Header() {
   return (
@@ -16,14 +16,44 @@ export default function Header() {
         <a
           href="#"
           className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
+          aria-label="GitHub"
         >
           <Github className="w-5 h-5" />
         </a>
         <a
           href="#"
           className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
+          aria-label="Twitter"
         >
           <Twitter className="w-5 h-5" />
+        </a>
+        <a
+          href="#"
+          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
+          aria-label="LinkedIn"
+        >
+          <Linkedin className="w-5 h-5" />
+        </a>
+        <a
+          href="#"
+          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
+          aria-label="YouTube"
+        >
+          <Youtube className="w-5 h-5" />
+        </a>
+        <a
+          href="#"
+          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
+          aria-label="Instagram"
+        >
+          <Instagram className="w-5 h-5" />
+        </a>
+        <a
+          href="#"
+          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
+          aria-label="Meetup Registration"
+        >
+          <CalendarDays className="w-5 h-5" />
         </a>
       </div>
     </header>
