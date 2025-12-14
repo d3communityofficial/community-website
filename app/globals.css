@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    /* Font */
+    --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+    
+    /* Custom dark colors */
+    --color-dark-bg: #020617;
+    --color-dark-card: #0f172a;
+    --color-dark-card-hover: #1e293b;
+    --color-dark-border: #1e293b;
+    --color-dark-primary: #6366f1;
+    --color-dark-secondary: #fbbf24;
+    --color-dark-text: #f8fafc;
+    --color-dark-muted: #94a3b8;
+    
+    /* Custom border radius */
+    --radius-bento: 1.5rem;
+  }
+}
+
+@layer utilities {
+  /* Background colors */
+  .bg-dark-bg { background-color: var(--color-dark-bg); }
+  .bg-dark-card { background-color: var(--color-dark-card); }
+  .bg-dark-card-hover { background-color: var(--color-dark-card-hover); }
+  .bg-dark-primary { background-color: var(--color-dark-primary); }
+  .bg-dark-secondary { background-color: var(--color-dark-secondary); }
+  
+  /* Text colors */
+  .text-dark-text { color: var(--color-dark-text); }
+  .text-dark-muted { color: var(--color-dark-muted); }
+  .text-dark-primary { color: var(--color-dark-primary); }
+  .text-dark-secondary { color: var(--color-dark-secondary); }
+  
+  /* Border colors */
+  .border-dark-border { border-color: var(--color-dark-border); }
+  .border-dark-primary { border-color: var(--color-dark-primary); }
+  .border-dark-secondary { border-color: var(--color-dark-secondary); }
+  
+  /* Border radius */
+  .rounded-bento { border-radius: var(--radius-bento); }
+  
+  /* Hover states */
+  .hover\:bg-dark-card-hover:hover { background-color: var(--color-dark-card-hover); }
+  .hover\:text-dark-primary:hover { color: var(--color-dark-primary); }
+  .hover\:border-dark-primary:hover { border-color: var(--color-dark-primary); }
+  .hover\:border-dark-secondary:hover { border-color: var(--color-dark-secondary); }
+  .group:hover .group-hover\:text-dark-primary { color: var(--color-dark-primary); }
+  .group:hover .group-hover\:border-dark-primary { border-color: var(--color-dark-primary); }
+  .group:hover .group-hover\:border-dark-secondary { border-color: var(--color-dark-secondary); }
+}
+
+body {
+  font-family: var(--font-jakarta), sans-serif;
+  background-color: #020617;
+  color: #f8fafc;
+  background-image: linear-gradient(to right, #111827 1px, transparent 1px),
+    linear-gradient(to bottom, #111827 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bento-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px -10px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-glass {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
