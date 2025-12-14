@@ -1,6 +1,6 @@
 # Description
 
-# Screenshots (if appropriate):
+# Screenshots (Required):
 
 # Types of changes
 
