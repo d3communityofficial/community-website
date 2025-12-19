@@ -16,8 +16,9 @@ const nextConfig: NextConfig = {
     ],
   },
   // Base path only for GitHub Pages production deployment
-  basePath: isProd ? '/community-website' : '',
   // Remove basePath if deploying to username.github.io (custom domain or user site)
+  basePath: isProd ? '/community-website' : '',
+  assetPrefix: isProd ? '/community-website' : '',
 };
 
 export default nextConfig;
