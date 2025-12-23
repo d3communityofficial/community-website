@@ -1,6 +1,7 @@
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import About from './components/About';
 import NextEventCard from './components/NextEventCard';
 import StatsCard from './components/StatsCard';
 import LocationCard from './components/LocationCard';
@@ -16,12 +17,15 @@ export default function Home() {
     <>
       <Navigation />
 
-      <div className='max-w-7xl mx-auto space-y-8 mb-24'>
+      <div className="max-w-7xl mx-auto space-y-8 mb-24">
         <Header />
         <HeroSection />
 
+        {/* About Us Section */}
+        <About />
+
         {/* Main Bento Grid */}
-        <div className='flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]'>
+        <div className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]">
           <NextEventCard />
           <StatsCard />
           <LocationCard />
@@ -30,7 +34,7 @@ export default function Home() {
         </div>
 
         {/* Secondary Section: Past Logs & Team */}
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <MissionLogs />
           <TeamSection />
         </div>
