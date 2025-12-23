@@ -17,7 +17,6 @@ interface NarrativeProps {
     };
     description: string;
     quote: string;
-    cta: string;
     tags: Tag[];
   };
 }
@@ -63,11 +62,6 @@ export default function NarrativeBlock({ data }: NarrativeProps) {
           );
         })}
       </div>
-
-      <button className="mt-4 group/btn flex items-center gap-2 text-sm font-bold text-[var(--color-primary-light)] hover:text-[var(--color-primary)] transition-colors">
-        {data.cta}
-        <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-      </button>
     </div>
   );
 }

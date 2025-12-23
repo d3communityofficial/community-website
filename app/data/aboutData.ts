@@ -14,7 +14,6 @@ export const aboutData = {
     { id: 2, label: 'Open Source', iconType: 'Terminal' },
     { id: 3, label: 'Peer Learning', iconType: 'Users' },
   ],
-  cta: 'Read our Manifesto',
   terminalScript: [
     { type: 'cmd', text: 'init protocol --d3' },
     { type: 'output', text: '>> D3_CORE: Loading neural pathways...' },
