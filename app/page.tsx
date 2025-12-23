@@ -2,6 +2,7 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import NextEventCard from './components/NextEventCard';
+import PastEventCard from './components/PastEventCard';
 import StatsCard from './components/StatsCard';
 import LocationCard from './components/LocationCard';
 import TechStackCard from './components/TechStackCard';
@@ -21,8 +22,9 @@ export default function Home() {
         <HeroSection />
 
         {/* Main Bento Grid */}
-        <div className='flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]'>
+        <div className='flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6'>
           <NextEventCard />
+          <PastEventCard/>
           <StatsCard />
           <LocationCard />
           <TechStackCard />
