@@ -121,6 +121,46 @@ The page will auto-reload when you make changes to the code.
 2. Main page logic is in `/app/page.tsx`
 3. Global styles are in `/app/globals.css`
 4. Theme context is in `/app/context/ThemeContext.tsx`
+5. Constants are in `/constants/` - organized by feature/domain
+6. Utility functions are in `/app/utils/`
+7. Static data is in `/app/data/`
+
+### Constants Organization
+
+The project uses a centralized constants folder for better code organization:
+
+**Location**: `/constants/`
+
+**Structure**: Constants are organized by feature or domain (e.g., `navigation.ts`, `events.ts`)
+
+**Benefits**:
+
+- Single source of truth for configuration values
+- Easier to maintain and update
+- Type-safe with TypeScript
+- Better code reusability
+
+**Example Usage**:
+
+```tsx
+// Import constants
+import {
+  NAVIGATION_SECTIONS,
+  NAVIGATION_ITEMS,
+  SCROLL_CONFIG,
+} from '@/constants/navigation';
+
+// Use in component
+const sections = NAVIGATION_SECTIONS;
+const scrollOffset = window.innerHeight * SCROLL_CONFIG.DETECTION_OFFSET;
+```
+
+**Adding New Constants**:
+
+1. Create a new file in `/constants/` (e.g., `constants/events.ts`)
+2. Export typed constants with JSDoc comments
+3. Import and use in your components
+4. Update this README if adding a new constants category
 
 ## 📂 Project Structure
 
@@ -160,11 +200,17 @@ community-website/
 │   │
 │   ├── context/             # React Context providers
 │   │   └── ThemeContext.tsx # Theme state management
+│   ├── data/                # Static data files
+│   │   └── aboutData.ts     # About section data
+│   ├── utils/               # Utility functions
+│   │   └── paths.ts         # Asset path helpers for GitHub Pages
 │   ├── favicon.ico          # Site favicon
 │   ├── globals.css          # Global styles, theme variables, gradients
 │   ├── layout.tsx           # Root layout with fonts and ThemeProvider
 │   └── page.tsx             # Main landing page
-├── public/                  # Static assets (currently empty)
+├── constants/                # Application constants
+│   └── navigation.ts        # Navigation-related constants (sections, items, scroll config)
+├── public/                  # Static assets (images, fonts, etc.)
 ├── out/                     # Static export output (generated)
 ├── node_modules/            # Dependencies (generated)
 ├── .gitignore               # Git ignore rules
@@ -188,6 +234,17 @@ community-website/
 - Benefits: Encapsulation, clean imports, better organization
 
 **`app/context/`** - React Context providers for global state (theme management)
+
+**`app/data/`** - Static data files used by components (e.g., about section content)
+
+**`app/utils/`** - Utility functions and helpers (e.g., path resolution for GitHub Pages)
+
+**`constants/`** - Application-wide constants organized by feature/domain
+
+- Centralized configuration values
+- Type-safe constants with TypeScript
+- Better code organization and maintainability
+- Example: `constants/navigation.ts` contains navigation sections, items, and scroll configuration
 
 **`.github/workflows/`** - Automated CI/CD pipeline that deploys to GitHub Pages on push to main
 

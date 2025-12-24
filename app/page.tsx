@@ -21,33 +21,46 @@ export default function Home() {
 
       <div className="mx-auto space-y-8 mb-24">
         <Header />
-        <HeroSection />
+        {/* Home */}
+        <section id="home">
+          <HeroSection />
+        </section>
 
         {/* About Us Section */}
-        <About />
+        <section id="about">
+          <About />
+        </section>
 
         {/* Main Bento Grid */}
-        <div className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]">
+        <section
+          id="events"
+          className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]"
+        >
           <NextEventCard />
           <LocationCard />
           <StatsCard />
+          {/* Call for Speakers Section */}
           <CallForSpeakers />
           <CallForVolunteers />
           <SocialCard />
           <TechStackCard />
-        </div>
+        </section>
 
         {/* Secondary Section: Past Logs & Team */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section id="team" className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <MissionLogs />
           <TeamSection />
-        </div>
+        </section>
 
         {/* Community Partners Section */}
-        <CommunityPartners />
+        <section id="partners">
+          <CommunityPartners />
+        </section>
 
         {/* Sponsors Section */}
-        <Sponsors />
+        <section id="sponsors">
+          <Sponsors />
+        </section>
       </div>
     </>
   );
