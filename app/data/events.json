@@ -7,7 +7,8 @@
       "title": "Meetup 5",
       "description": "Advanced topics in full-stack development and AI integration.",
       "status": "completed",
-      "link":"https://d3community.in/meetup-5"
+      "link":"https://d3community.in/meetup-5",
+      "venue": "Yuniq, Chennai"
     },
     {
       "id": "meetup-4",
@@ -16,7 +17,8 @@
       "title": "Meetup 4",
       "description": "Building scalable applications with modern frameworks.",
       "status": "completed",
-      "link":"https://d3community.in/meetup-4"
+      "link":"https://d3community.in/meetup-4",
+      "venue": "Yuniq, Chennai"
     },
     {
       "id": "meetup-3",
@@ -25,7 +27,8 @@
       "title": "Meetup 3",
       "description": "Deep dive into React and Next.js best practices.",
       "status": "completed",
-      "link":"https://d3community.in/meetup-3"
+      "link":"https://d3community.in/meetup-3",
+      "venue": "Kissflow, Chennai"
     },
     {
       "id": "meetup-2",
@@ -34,7 +37,8 @@
       "title": "Meetup 2",
       "description": "Introduction to AI tools for developers.",
       "status": "completed",
-      "link":"https://d3community.in/meetup-2"
+      "link":"https://d3community.in/meetup-2",
+      "venue": "ZOOMINFO,Perungudi"
     },
     {
       "id": "meetup-1",
@@ -43,7 +47,8 @@
       "title": "Meetup 1",
       "description": "Kickoff event - Building the D3 Community.",
       "status": "completed",
-      "link":"https://d3community.in/meetup-1"
+      "link":"https://d3community.in/meetup-1",
+      "venue": "Community Center, Bangalore"
     }
   ],
   "upcomingEvents": [
@@ -54,7 +59,8 @@
       "title": "GenAI & Frontend Architecture",
       "description": "Deep dive into integrating LLMs with React. Production-grade patterns only.",
       "status": "upcoming",
-      "rsvpUrl": "https://bento.me/d3community"
+      "rsvpUrl": "https://bento.me/d3community",
+      "venue": "M2P Fintech, Chennai"
     }
     
   ]

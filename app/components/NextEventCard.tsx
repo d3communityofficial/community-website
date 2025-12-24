@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarClock } from "lucide-react";
+import { CalendarClock, MapPin } from "lucide-react";
 import { useState, useMemo } from "react";
 import eventsData from "../data/events.json";
 
@@ -27,7 +27,7 @@ export default function NextEventCard() {
   return (
     <>
       {upcomingEvents.map((event) => (
-        <div key={event.id} className="md:col-span-2 rounded-bento p-8 border border-dark-border bento-card flex flex-col relative overflow-hidden group" style={{ background: 'var(--gradient-card)' }}>
+        <div key={event.id} className="md:col-span-2 rounded-bento p-8 border border-dark-border bento-card flex flex-col relative overflow-hidden group bg-gradient-card">
           <div className="relative z-10 h-full flex flex-col">
             <div className="flex justify-between items-start mb-auto">
               <div className="p-3 bg-dark-card border border-dark-border rounded-xl">
@@ -40,16 +40,22 @@ export default function NextEventCard() {
 
             <div className="my-8">
               <div className="text-dark-secondary font-mono text-sm mb-2">&gt;&gt; {event.formattedDate}</div>
-              <h3 className="text-2xl font-bold leading-tight mb-4">{event.title}</h3>
-              <p className="text-dark-muted text-sm leading-relaxed border-l-2 border-dark-primary pl-3">
+              <h3 className="text-2xl font-bold leading-tight mb-4 text-dark-text">{event.title}</h3>
+              <p className="text-dark-muted text-sm leading-relaxed border-l-2 border-dark-primary pl-3 mb-4">
                 {event.description}
               </p>
+              {event.venue && (
+                <div className="flex items-center gap-2 text-sm text-dark-muted">
+                  <MapPin className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                  <span>{event.venue}</span>
+                </div>
+              )}
             </div>
 
             <button 
               onClick={() => handleRSVP(event)}
-              className="w-full py-3 font-bold rounded-xl mt-auto transition-all hover:shadow-lg hover:scale-105 cursor-pointer" 
-              style={{ background: 'var(--gradient-accent)', color: '#000' }}
+              className="w-full py-3 font-bold rounded-xl mt-auto transition-all hover:shadow-lg hover:scale-105 cursor-pointer bg-gradient-accent" 
+              style={{ color: '#000' }}
               aria-label={`RSVP for ${event.title} event`}
             >
               RSVP Now
@@ -64,14 +70,13 @@ export default function NextEventCard() {
       )}
 
       {showRSVP && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setShowRSVP(null)}>
+        <div className="fixed inset-0 bg-dark-bg/50 flex items-center justify-center z-50 p-4" onClick={() => setShowRSVP(null)}>
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-xl font-bold mb-4">RSVP Coming Soon</h3>
+            <h3 className="text-xl font-bold mb-4 text-dark-text">RSVP Coming Soon</h3>
             <p className="text-dark-muted mb-4">RSVP functionality will be available soon. For now, please join our community to stay updated!</p>
             <button
               onClick={() => setShowRSVP(null)}
-              className="w-full py-2 px-4 rounded-xl font-bold transition-all"
-              style={{ background: 'var(--gradient-primary)', color: 'white' }}
+              className="w-full py-2 px-4 rounded-xl font-bold transition-all bg-gradient-primary text-dark-text"
             >
               Close
             </button>

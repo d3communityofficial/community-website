@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { CalendarCheck, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import eventsData from "../data/events.json";
 import { useResponsiveCardsPerView, useCarouselAutoRotate, useCarouselPause } from "../hooks/useCarousel";
@@ -13,6 +13,7 @@ interface PastEvent {
   description: string;
   status: string;
   link: string;
+  venue: string;
 }
 
 export default function PastEventCard() {
@@ -92,8 +93,7 @@ export default function PastEventCard() {
 
   return (
     <div 
-      className="col-span-1 md:col-span-4 rounded-bento p-8 border border-dark-border bento-card flex flex-col relative overflow-hidden group" 
-      style={{ background: 'var(--gradient-card)' }}
+      className="col-span-1 md:col-span-4 rounded-bento p-8 border border-dark-border bento-card flex flex-col relative overflow-hidden group bg-gradient-card" 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       role="region"
@@ -137,10 +137,16 @@ export default function PastEventCard() {
               >
                 <div className="mb-4">
                   <div className="text-dark-secondary font-mono text-xs mb-2">&gt;&gt; {event.formattedDate}</div>
-                  <h3 className="text-lg font-bold leading-tight mb-2">{event.title}</h3>
-                  <p className="text-dark-muted text-sm leading-relaxed border-l-2 border-dark-primary pl-3">
+                  <h3 className="text-lg font-bold leading-tight mb-2 text-dark-text">{event.title}</h3>
+                  <p className="text-dark-muted text-sm leading-relaxed border-l-2 border-dark-primary pl-3 mb-3">
                     {event.description}
                   </p>
+                  {event.venue && (
+                    <div className="flex items-center gap-2 text-xs text-dark-muted">
+                      <MapPin className="w-3 h-3 flex-shrink-0" aria-hidden="true" />
+                      <span>{event.venue}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-auto">
                   <div className="text-xs text-dark-muted font-mono">✓ Event Completed</div>
@@ -173,7 +179,7 @@ export default function PastEventCard() {
                 className={`w-2 h-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-dark-primary ${
                   index === currentIndex
                     ? 'bg-dark-primary w-6'
-                    : 'bg-dark-border hover:bg-dark-muted'
+                    : 'bg-dark-card hover:bg-dark-card-hover border border-dark-border'
                 }`}
               />
             ))}
