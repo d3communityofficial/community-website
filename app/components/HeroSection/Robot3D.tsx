@@ -4,7 +4,7 @@ import { useRef, useEffect, useState, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
-import { getAssetPath } from '../utils/paths';
+import { getAssetPath } from '../../utils/paths';
 
 // Component to handle the robot model and rotation
 function RobotModel({ cursorPosition, isMobile }: { cursorPosition: number; isMobile: boolean }) {
@@ -135,3 +135,4 @@ export default function Robot3D() {
 // Preload the model - detect basePath at module load time
 const preloadPath = typeof window !== 'undefined' ? getAssetPath('/D3-robot-3d-model.glb') : '/D3-robot-3d-model.glb';
 useGLTF.preload(preloadPath);
+

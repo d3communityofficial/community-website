@@ -213,3 +213,16 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+/* Custom responsive max-width for hero section paragraphs */
+@media (min-width: 1440px) {
+  .hero-paragraph {
+    max-width: 32rem; /* max-w-lg */
+  }
+}
+
+@media (min-width: 2000px) {
+  .hero-paragraph {
+    max-width: none;
+  }
+}
