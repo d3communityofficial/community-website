@@ -31,11 +31,11 @@ export default function Home() {
           <NextEventCard />
           <LocationCard />
           <StatsCard />
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-4 md:gap-6">
           <CallForSpeakers />
           <CallForVolunteers />
           </div>
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-4 md:gap-6">
           <SocialCard />
           <TechStackCard />
           </div>
