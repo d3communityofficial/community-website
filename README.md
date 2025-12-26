@@ -163,20 +163,7 @@ community-website/
 │   │   ├── TechStackCard.tsx      # Tech stack icons
 │   │   └── ContactUs/             # Contact section (complex component)
 │   │       ├── index.tsx          # Main ContactUs component
-│   │       ├── SocialLinks.tsx    # Social media links grid
-│   │       ├── ContactForm.tsx    # Contact form with validation
-│   │       └── ContactInfo.tsx    # Location & community info
-│   │
-│   │   # Component Organization Pattern:
-│   │   # - Simple components: Single .tsx file (e.g., Header.tsx)
-│   │   # - Complex components: Folder with index.tsx + sub-components
-│   │   #
-│   │   # Example for complex component:
-│   │   # └── ContactUs/
-│   │   #     ├── index.tsx          # Main component (exports ContactUs)
-│   │   #     ├── SocialLinks.tsx    # Sub-component
-│   │   #     ├── ContactForm.tsx    # Sub-component
-│   │   #     └── ContactInfo.tsx    # Sub-component
+│   │       └── SocialLinks.tsx    # Social media links grid
 │   │
 │   ├── context/             # React Context providers
 │   │   └── ThemeContext.tsx # Theme state management

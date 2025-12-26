@@ -43,7 +43,9 @@ export default function Home() {
         <Sponsors />
 
         {/* Contact Us Section */}
-        <ContactUs />
+        <section id="contact">
+          <ContactUs />
+        </section>
       </div>
     </>
   );
