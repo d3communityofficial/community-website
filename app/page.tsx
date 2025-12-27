@@ -24,6 +24,8 @@ export default function Home() {
         {/* About Us Section */}
         <About />
 
+        {/* Social Section*/}
+
         {/* Main Bento Grid */}
         <div className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]">
           <NextEventCard />

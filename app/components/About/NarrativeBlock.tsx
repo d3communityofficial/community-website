@@ -1,4 +1,4 @@
-import { Terminal, Cpu, Users, ArrowRight } from 'lucide-react';
+import { Terminal, Cpu, Users } from 'lucide-react';
 
 interface Tag {
   id: number;
@@ -30,8 +30,6 @@ const iconMap: Record<string, any> = {
 export default function NarrativeBlock({ data }: NarrativeProps) {
   return (
     <div className="space-y-6 relative z-10">
-      {/* Badge removed here to match other section styles */}
-
       <h2 className="text-3xl md:text-4xl font-bold font-sans">
         {data.title.start}{' '}
         <span className="text-gradient">{data.title.highlight1}</span>{' '}
