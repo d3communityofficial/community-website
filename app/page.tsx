@@ -1,6 +1,7 @@
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import About from './components/About';
 import NextEventCard from './components/NextEventCard';
 import StatsCard from './components/StatsCard';
 import LocationCard from './components/LocationCard';
@@ -9,6 +10,8 @@ import SocialCard from './components/SocialCard';
 import MissionLogs from './components/MissionLogs';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
+import CallForSpeakers from './components/CallForSpeakers';
+import CallForVolunteers from './components/CallForVolunteers';
 import Sponsors from './components/Sponsors';
 import ContactUs from './components/ContactUs';
 
@@ -17,30 +20,52 @@ export default function Home() {
     <>
       <Navigation />
 
-      <div className='max-w-7xl mx-auto space-y-8 mb-24'>
+      <div className="mx-auto space-y-8 mb-24">
         <Header />
-        <HeroSection />
+        {/* Home */}
+        <section id="home">
+          <HeroSection />
+        </section>
+
+        {/* About Us Section */}
+        <section id="about">
+          <About />
+        </section>
 
         {/* Main Bento Grid */}
-        <div className='flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]'>
+        <section
+          id="events"
+          className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]"
+        >
           <NextEventCard />
-          <StatsCard />
           <LocationCard />
-          <TechStackCard />
+          <StatsCard />
+          <div className="flex flex-wrap gap-4 md:gap-6">
+          {/* Call for Speakers Section */}
+          <CallForSpeakers />
+          <CallForVolunteers />
+          </div>
+          <div className="flex flex-wrap gap-4 md:gap-6">
           <SocialCard />
-        </div>
+          <TechStackCard />
+          </div>
+        </section>
 
         {/* Secondary Section: Past Logs & Team */}
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <section id="team" className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <MissionLogs />
           <TeamSection />
-        </div>
+        </section>
 
         {/* Community Partners Section */}
-        <CommunityPartners />
+        <section id="partners">
+          <CommunityPartners />
+        </section>
 
         {/* Sponsors Section */}
-        <Sponsors />
+        <section id="sponsors">
+          <Sponsors />
+        </section>
 
         {/* Contact Us Section */}
         <section id="contact">
