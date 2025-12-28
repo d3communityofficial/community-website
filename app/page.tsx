@@ -3,58 +3,79 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import About from './components/About';
 import NextEventCard from './components/NextEventCard';
-import StatsCard from './components/StatsCard';
-import LocationCard from './components/LocationCard';
-import TechStackCard from './components/TechStackCard';
-import SocialCard from './components/SocialCard';
 import MissionLogs from './components/MissionLogs';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
+import CallForSpeakers from './components/CallForSpeakers';
+import CallForVolunteers from './components/CallForVolunteers';
 import Sponsors from './components/Sponsors';
+import ContactUs from './components/ContactUs';
+import ContributorsSection from './components/ContributorsSection';
 
 export default function Home() {
   return (
     <>
       <Navigation />
 
-      <div className="max-w-7xl mx-auto space-y-8 mb-24">
+      <div className="mx-auto space-y-8 mb-24">
         <Header />
-        <HeroSection />
 
-        {/* NEW: Grid Container for About & Social (50% / 50%) */}
+        {/* Home */}
+        <section id="home">
+          <HeroSection />
+        </section>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {/* About Section - Takes Left 50% */}
-          <section className="col-span-full md:col-span-2 w-full flex flex-col h-full">
+          <section
+            id="about"
+            className="col-span-full md:col-span-2 w-full flex flex-col h-full"
+          >
             <About />
           </section>
 
           {/* Social Section Placeholder - Takes Right 50% */}
           <section className="col-span-full md:col-span-2 w-full flex flex-col h-full min-h-[300px] border border-dashed border-dark-border rounded-bento bg-dark-card/20 items-center justify-center text-dark-muted">
-            {/* The other developer will put their component here */}
             <p>Social Section (Reserved)</p>
           </section>
         </div>
 
         {/* Main Bento Grid */}
-        <div className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]">
+        <section
+          id="events"
+          className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]"
+        >
           <NextEventCard />
-          <StatsCard />
-          <LocationCard />
-          <TechStackCard />
-          <SocialCard />
-        </div>
+          <div className="flex flex-wrap gap-4 md:gap-6">
+            {/* Call for Speakers Section */}
+            <CallForSpeakers />
+            <CallForVolunteers />
+          </div>
+        </section>
 
         {/* Secondary Section: Past Logs & Team */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section id="team" className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <MissionLogs />
           <TeamSection />
-        </div>
+        </section>
 
         {/* Community Partners Section */}
-        <CommunityPartners />
+        <section id="partners">
+          <CommunityPartners />
+        </section>
 
         {/* Sponsors Section */}
-        <Sponsors />
+        <section id="sponsors">
+          <Sponsors />
+        </section>
+
+        {/* Contributors Section */}
+        <section id="contributors">
+          <ContributorsSection />
+        </section>
+
+        {/* Contact Us Section */}
+        <section id="contact">
+          <ContactUs />
+        </section>
       </div>
     </>
   );

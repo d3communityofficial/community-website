@@ -37,9 +37,22 @@
 
     /* Gradient Definitions */
     --gradient-primary: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
-    --gradient-primary-soft: linear-gradient(135deg, rgba(0, 74, 173, 0.1) 0%, rgba(0, 102, 255, 0.1) 100%);
-    --gradient-hero: linear-gradient(135deg, #003580 0%, #004aad 50%, #0066ff 100%);
-    --gradient-card: linear-gradient(180deg, rgba(0, 74, 173, 0.15) 0%, rgba(10, 22, 40, 0.8) 100%);
+    --gradient-primary-soft: linear-gradient(
+      135deg,
+      rgba(0, 74, 173, 0.1) 0%,
+      rgba(0, 102, 255, 0.1) 100%
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      #003580 0%,
+      #004aad 50%,
+      #0066ff 100%
+    );
+    --gradient-card: linear-gradient(
+      180deg,
+      rgba(0, 74, 173, 0.15) 0%,
+      rgba(10, 22, 40, 0.8) 100%
+    );
     --gradient-accent: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
   }
 
@@ -71,9 +84,22 @@
 
     /* Gradient Definitions */
     --gradient-primary: linear-gradient(135deg, #004aad 0%, #0066ff 100%);
-    --gradient-primary-soft: linear-gradient(135deg, rgba(0, 74, 173, 0.08) 0%, rgba(0, 102, 255, 0.08) 100%);
-    --gradient-hero: linear-gradient(135deg, #003580 0%, #004aad 50%, #0066ff 100%);
-    --gradient-card: linear-gradient(180deg, rgba(0, 74, 173, 0.05) 0%, rgba(255, 255, 255, 0.9) 100%);
+    --gradient-primary-soft: linear-gradient(
+      135deg,
+      rgba(0, 74, 173, 0.08) 0%,
+      rgba(0, 102, 255, 0.08) 100%
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      #003580 0%,
+      #004aad 50%,
+      #0066ff 100%
+    );
+    --gradient-card: linear-gradient(
+      180deg,
+      rgba(0, 74, 173, 0.05) 0%,
+      rgba(255, 255, 255, 0.9) 100%
+    );
     --gradient-accent: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
   }
 }
@@ -181,7 +207,11 @@ body {
 
 /* Grid lines only in dark mode */
 [data-theme='dark'] body {
-  background-image: linear-gradient(to right, var(--color-gradient-from) 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      var(--color-gradient-from) 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, var(--color-gradient-from) 1px, transparent 1px);
   background-size: 40px 40px;
 }
@@ -212,4 +242,36 @@ body {
   background: var(--color-nav-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom responsive max-width for hero section paragraphs */
+@media (min-width: 1440px) {
+  .hero-paragraph {
+    max-width: 32rem; /* max-w-lg */
+  }
+}
+
+@media (min-width: 2000px) {
+  .hero-paragraph {
+    max-width: none;
+  }
+}
+
+/* Navigation active state - theme aware */
+[data-theme='dark'] .nav-active {
+  color: #f8fafc; /* white in dark mode */
+}
+
+[data-theme='light'] .nav-active {
+  color: var(--color-primary); /* primary color in light mode */
+}
+
+[data-theme='dark'] .nav-active-dot {
+  background-color: #f8fafc; /* white in dark mode */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='light'] .nav-active-dot {
+  background-color: var(--color-primary); /* primary color in light mode */
+  box-shadow: 0 0 10px rgba(0, 74, 173, 0.6);
 }

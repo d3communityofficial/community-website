@@ -11,7 +11,7 @@ export default function About() {
     <div className="flex flex-col h-full w-full">
       {/* Title */}
       <div className="flex items-center gap-3 mb-6">
-        <Info className="w-6 h-6 text-orange-500" />
+        <Info className="w-6 h-6 text-dark-secondary" />
         <h2 className="text-2xl md:text-3xl font-bold font-sans text-[var(--color-text)]">
           About Us
         </h2>

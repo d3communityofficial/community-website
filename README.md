@@ -2,6 +2,8 @@
 
 A vibrant tech community that brings together AI Full-Stack Developers to build the future. We host events, workshops, and networking opportunities that connect talented engineers with cutting-edge technology and industry leaders.
 
+🌐 **Live Website**: [D3community official website](https://d3communityofficial.github.io/community-website)
+
 ## 📋 Table of Contents
 
 - [Tech Stack](#-tech-stack)
@@ -119,39 +121,134 @@ The page will auto-reload when you make changes to the code.
 2. Main page logic is in `/app/page.tsx`
 3. Global styles are in `/app/globals.css`
 4. Theme context is in `/app/context/ThemeContext.tsx`
+5. Constants are in `/constants/` - organized by feature/domain
+6. Utility functions are in `/app/utils/`
+7. Static data is in `/app/data/`
+
+### Constants Organization
+
+The project uses a centralized constants folder for better code organization:
+
+**Location**: `/constants/`
+
+**Structure**: Constants are organized by feature or domain (e.g., `navigation.ts`, `events.ts`)
+
+**Benefits**:
+
+- Single source of truth for configuration values
+- Easier to maintain and update
+- Type-safe with TypeScript
+- Better code reusability
+
+**Example Usage**:
+
+```tsx
+// Import constants
+import {
+  NAVIGATION_SECTIONS,
+  NAVIGATION_ITEMS,
+  SCROLL_CONFIG,
+} from '@/constants/navigation';
+
+// Use in component
+const sections = NAVIGATION_SECTIONS;
+const scrollOffset = window.innerHeight * SCROLL_CONFIG.DETECTION_OFFSET;
+```
+
+**Adding New Constants**:
+
+1. Create a new file in `/constants/` (e.g., `constants/events.ts`)
+2. Export typed constants with JSDoc comments
+3. Import and use in your components
+4. Update this README if adding a new constants category
 
 ## 📂 Project Structure
 
 ```
 community-website/
-├── app/
+├── .github/                 # GitHub configuration
+│   ├── workflows/
+│   │   └── deploy.yml       # GitHub Actions CI/CD pipeline
+│   ├── CODEOWNERS           # Code ownership rules
+│   └── PULL_REQUEST_TEMPLATE.md
+├── app/                     # Next.js App Router directory
 │   ├── components/          # Reusable React components
-│   │   ├── CommunityPartners.tsx
-│   │   ├── Header.tsx
-│   │   ├── HeroSection.tsx
-│   │   ├── LocationCard.tsx
-│   │   ├── MissionLogs.tsx
-│   │   ├── Navigation.tsx
-│   │   ├── NextEventCard.tsx
-│   │   ├── SocialCard.tsx
-│   │   ├── Sponsors.tsx
-│   │   ├── StatsCard.tsx
-│   │   ├── TeamSection.tsx
-│   │   └── TechStackCard.tsx
-│   ├── context/             # React context providers
-│   │   └── ThemeContext.tsx
-│   ├── favicon.ico
-│   ├── globals.css          # Global styles and Tailwind config
-│   ├── layout.tsx           # Root layout with fonts and providers
+│   │   ├── CallForSpeakers.tsx  # Call for speakers section
+│   │   ├── CallForVolunteers.tsx  # Call for volunteers section
+│   │   ├── CommunityPartners.tsx  # Partner organizations section
+│   │   ├── Header.tsx             # Site header with theme toggle
+│   │   ├── HeroSection.tsx        # Main hero banner
+│   │   ├── LocationCard.tsx       # Chennai hub info card
+│   │   ├── MissionLogs.tsx        # Past events history
+│   │   ├── Navigation.tsx         # Floating bottom navigation
+│   │   ├── NextEventCard.tsx      # Upcoming event card
+│   │   ├── SocialCard.tsx         # Join community CTA
+│   │   ├── Sponsors.tsx           # Sponsors showcase
+│   │   ├── StatsCard.tsx          # Community stats display
+│   │   ├── TeamSection.tsx        # Core team members
+│   │   └── TechStackCard.tsx      # Tech stack icons
+│   │
+│   │   # Component Organization Pattern:
+│   │   # - Simple components: Single .tsx file (e.g., Header.tsx)
+│   │   # - Complex components: Folder with index.tsx + sub-components
+│   │   #
+│   │   # Example for complex component:
+│   │   # └── AboutUS/
+│   │   #     ├── index.tsx          # Main component (exports AboutUS)
+│   │   #     ├── TerminalBlock.tsx     # Sub-component
+│   │   #     ├── NarrativeBlock.tsx # Sub-component
+│   │
+│   ├── context/             # React Context providers
+│   │   └── ThemeContext.tsx # Theme state management
+│   ├── data/                # Static data files
+│   │   └── aboutData.ts     # About section data
+│   ├── utils/               # Utility functions
+│   │   └── paths.ts         # Asset path helpers for GitHub Pages
+│   ├── favicon.ico          # Site favicon
+│   ├── globals.css          # Global styles, theme variables, gradients
+│   ├── layout.tsx           # Root layout with fonts and ThemeProvider
 │   └── page.tsx             # Main landing page
-├── public/                  # Static assets
+├── constants/                # Application constants
+│   └── navigation.ts        # Navigation-related constants (sections, items, scroll config)
+├── public/                  # Static assets (images, fonts, etc.)
+├── out/                     # Static export output (generated)
+├── node_modules/            # Dependencies (generated)
+├── .gitignore               # Git ignore rules
 ├── eslint.config.mjs        # ESLint configuration
-├── next.config.ts           # Next.js configuration
+├── next-env.d.ts            # Next.js TypeScript declarations
+├── next.config.ts           # Next.js config (static export, basePath)
 ├── package.json             # Dependencies and scripts
+├── package-lock.json        # Locked dependency versions
 ├── postcss.config.mjs       # PostCSS configuration
-├── tsconfig.json            # TypeScript configuration
-└── README.md
+├── prototype-dark.html      # Initial design prototype
+├── README.md                # Project documentation
+└── tsconfig.json            # TypeScript configuration
 ```
+
+### Key Directories Explained
+
+**`app/components/`** - All reusable UI components using TypeScript and React 19
+
+- Simple components: Single `.tsx` file
+- Complex components: Folder with `index.tsx` + sub-components
+- Benefits: Encapsulation, clean imports, better organization
+
+**`app/context/`** - React Context providers for global state (theme management)
+
+**`app/data/`** - Static data files used by components (e.g., about section content)
+
+**`app/utils/`** - Utility functions and helpers (e.g., path resolution for GitHub Pages)
+
+**`constants/`** - Application-wide constants organized by feature/domain
+
+- Centralized configuration values
+- Type-safe constants with TypeScript
+- Better code organization and maintainability
+- Example: `constants/navigation.ts` contains navigation sections, items, and scroll configuration
+
+**`.github/workflows/`** - Automated CI/CD pipeline that deploys to GitHub Pages on push to main
+
+**`out/`** - Generated static site export for deployment (created by `npm run build`)
 
 ## 🎨 Theme Switching
 
@@ -172,11 +269,13 @@ The entire application uses a custom CSS variable-based color system centered ar
 #### Brand Colors
 
 **Primary Colors:**
+
 - Primary: `#004aad` (Deep Blue)
 - Primary Light: `#0066ff` (Bright Blue)
 - Primary Dark: `#003580` (Navy Blue)
 
 **Secondary Colors:**
+
 - Secondary: `#ffa726` / `#ff9800` (Orange)
 - Secondary Light: `#ffb74d` (Light Orange)
 
@@ -209,18 +308,22 @@ Divider: #003580 (Navy Blue)
 The theme includes 5 custom gradient variations:
 
 1. **Primary Gradient** (`--gradient-primary`)
+
    - `linear-gradient(135deg, #004aad 0%, #0066ff 100%)`
    - Used in: Buttons, logos, hero CTA
 
 2. **Primary Soft** (`--gradient-primary-soft`)
+
    - Semi-transparent overlay for subtle backgrounds
    - Used in: Cards, stats section
 
 3. **Hero Gradient** (`--gradient-hero`)
+
    - `linear-gradient(135deg, #003580 0%, #004aad 50%, #0066ff 100%)`
    - Used in: Text gradients, hero section
 
 4. **Card Gradient** (`--gradient-card`)
+
    - Subtle gradient for card backgrounds
    - Used in: Event cards
 
@@ -239,10 +342,7 @@ background: var(--gradient-primary);
 border-color: var(--color-border);
 
 /* Utility classes available */
-.bg-dark-primary
-.text-dark-primary
-.border-dark-border
-.bg-gradient-primary
+.bg-dark-primary .text-dark-primary .border-dark-border .bg-gradient-primary;
 ```
 
 ### Theme Context API
@@ -264,12 +364,14 @@ function MyComponent() {
 The website is **fully responsive** and follows a **mobile-first approach** with optimized layouts for all devices:
 
 - **Mobile**: < 768px
+
   - Touch-optimized interface
   - Simplified navigation
   - Stacked card layouts
   - Optimized font sizes and spacing
 
 - **Tablet**: 768px - 1024px
+
   - Balanced grid layouts
   - Enhanced spacing
   - Optimized for both portrait and landscape

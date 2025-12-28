@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 
 const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/community-website' : '';
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -16,8 +17,11 @@ const nextConfig: NextConfig = {
     ],
   },
   // Base path only for GitHub Pages production deployment
-  basePath: isProd ? '/community-website' : '',
   // Remove basePath if deploying to username.github.io (custom domain or user site)
+  basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 export default nextConfig;
