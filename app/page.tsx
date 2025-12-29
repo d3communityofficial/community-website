@@ -3,6 +3,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import About from './components/About';
 import NextEventCard from './components/NextEventCard';
+import PastEventCard from './components/PastEventCard';
 import MissionLogs from './components/MissionLogs';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
@@ -19,22 +20,32 @@ export default function Home() {
 
       <div className="mx-auto space-y-8 mb-24">
         <Header />
+
         {/* Home */}
         <section id="home">
           <HeroSection />
         </section>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <section
+            id="about"
+            className="col-span-full md:col-span-2 w-full flex flex-col h-full"
+          >
+            <About />
+          </section>
 
-        {/* About Us Section */}
-        <section id="about">
-          <About />
-        </section>
+          {/* Social Section Placeholder - Takes Right 50% */}
+          <section className="col-span-full md:col-span-2 w-full flex flex-col h-full min-h-[300px] border border-dashed border-dark-border rounded-bento bg-dark-card/20 items-center justify-center text-dark-muted">
+            <p>Social Section (Reserved)</p>
+          </section>
+        </div>
 
         {/* Main Bento Grid */}
         <section
           id="events"
-          className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]"
+          className="flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6"
         >
           <NextEventCard />
+          <PastEventCard/>
           <div className="flex flex-wrap gap-4 md:gap-6">
             {/* Call for Speakers Section */}
             <CallForSpeakers />
