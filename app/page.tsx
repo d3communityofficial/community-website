@@ -12,6 +12,8 @@ import CallForVolunteers from './components/CallForVolunteers';
 import Sponsors from './components/Sponsors';
 import ContactUs from './components/ContactUs';
 import ContributorsSection from './components/ContributorsSection';
+import SocialLinks from './components/ContactUs/SocialLinks';
+import { MessageSquare } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -33,9 +35,17 @@ export default function Home() {
             <About />
           </section>
 
-          {/* Social Section Placeholder - Takes Right 50% */}
-          <section className="col-span-full md:col-span-2 w-full flex flex-col h-full min-h-[300px] border border-dashed border-dark-border rounded-bento bg-dark-card/20 items-center justify-center text-dark-muted">
-            <p>Social Section (Reserved)</p>
+          {/* Social Links Section - Takes Right 50% */}
+          <section className="col-span-full md:col-span-2 w-full flex flex-col h-full">
+            <div className="space-y-6">
+              <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
+                <MessageSquare className="w-6 h-6 text-dark-secondary" />
+                Socials
+              </h2>
+              <div className="bg-dark-card rounded-3xl border border-dark-border p-6 md:p-8">
+                <SocialLinks />
+              </div>
+            </div>
           </section>
         </div>
 
