@@ -59,8 +59,8 @@ export default function SocialLinks() {
         </p>
       </div>
 
-      {/* Social Links Grid - 4 items in first row, 2 centered in second row */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+      {/* Social Links Grid - 3 per row on desktop, 2 per row on mobile */}
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         {socialPlatforms.map((platform, index) => {
           const Icon = platform.icon;
           return (
@@ -69,9 +69,7 @@ export default function SocialLinks() {
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative flex flex-col items-center gap-3 p-4 sm:p-5 rounded-xl bg-dark-card-hover border border-dark-border hover:border-dark-primary transition-all duration-300 overflow-hidden ${
-                index === 4 ? 'sm:col-start-2' : ''
-              }`}
+              className="group relative flex flex-col items-center gap-3 p-5 rounded-xl bg-dark-card-hover border border-dark-border hover:border-dark-primary transition-all duration-300 overflow-hidden"
               aria-label={`${platform.name} - ${platform.description}`}
             >
               {/* Gradient Background on Hover */}
@@ -82,14 +80,14 @@ export default function SocialLinks() {
 
               {/* Icon */}
               <div 
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg relative z-10"
+                className="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg relative z-10"
                 style={{ 
                   background: 'var(--color-card)',
                   border: '2px solid var(--color-border)'
                 }}
               >
                 <Icon 
-                  className="w-6 h-6 sm:w-7 sm:h-7 transition-colors duration-300 text-dark-muted group-hover:text-dark-text" 
+                  className="w-7 h-7 transition-colors duration-300 text-dark-muted group-hover:text-dark-text" 
                   style={{ 
                     color: `var(--color-text-muted)`,
                   }}
@@ -101,7 +99,7 @@ export default function SocialLinks() {
                 <p className="font-semibold text-sm text-dark-text group-hover:text-dark-primary transition-colors duration-300">
                   {platform.name}
                 </p>
-                <p className="text-xs text-dark-muted mt-1 hidden sm:block">
+                <p className="text-xs text-dark-muted mt-1">
                   {platform.description}
                 </p>
               </div>
