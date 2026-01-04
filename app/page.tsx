@@ -48,7 +48,13 @@ export default function Home() {
             </div>
           </section>
         </div>
-
+            {/*Core  Team */}
+        <section id="team" >
+          <TeamSection />
+          <section id ="mission-logs">
+            <MissionLogs />
+          </section>
+        </section>
         {/* Main Bento Grid */}
         <section
           id="events"
@@ -61,12 +67,6 @@ export default function Home() {
             <CallForSpeakers />
             <CallForVolunteers />
           </div>
-        </section>
-
-        {/* Secondary Section: Past Logs & Team */}
-        <section id="team" className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <MissionLogs />
-          <TeamSection />
         </section>
 
         {/* Community Partners Section */}
