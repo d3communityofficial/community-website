@@ -1,5 +1,9 @@
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+
 import HeroIcon from './HeroIcon';
+import { EXTERNAL_LINKS } from '@/app/constants/navigation';
+import { getAssetPath } from '@/app/utils/paths';
 // import Robot3D from './Robot3D'; // Commented out for now, will be used in future
 
 export default function HeroSection() {
@@ -71,10 +75,18 @@ export default function HeroSection() {
             Explore Events <ArrowRight className="w-4 h-4" />
           </a>
           <a
-            href="https://bento.me/d3community"
+            href={EXTERNAL_LINKS.WHATS_APP}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-dark-card border border-dark-border text-dark-text rounded-xl font-bold hover:border-dark-primary transition-colors"
           >
-            Join Discord
+            <Image
+              src={getAssetPath('/hero/whats-app.png')}
+              alt="join community"
+              width={24}
+              height={24}
+            />
+            Join Community
           </a>
         </div>
       </div>

@@ -70,5 +70,5 @@ export const SCROLL_CONFIG = {
  * External links
  */
 export const EXTERNAL_LINKS = {
-  DISCORD: 'https://bento.me/d3community',
+  WHATS_APP: 'https://chat.whatsapp.com/KtHsxrTG3m5F4Jv6Z1W61Y',
 } as const;

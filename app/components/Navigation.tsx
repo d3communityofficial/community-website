@@ -7,7 +7,7 @@ import {
   NAVIGATION_ITEMS,
   SCROLL_CONFIG,
   EXTERNAL_LINKS,
-} from '../../constants/navigation';
+} from '../constants/navigation';
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
@@ -112,7 +112,7 @@ export default function Navigation() {
         ))}
         <div className="h-4 w-px divider-dark-bg"></div>
         <a
-          href={EXTERNAL_LINKS.DISCORD}
+          href={EXTERNAL_LINKS.WHATS_APP}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-dark-primary text-white px-4 py-1.5 rounded-full text-xs font-bold hover:bg-indigo-400 transition-colors shadow-[0_0_15px_rgba(99,102,241,0.4)]"
@@ -187,13 +187,13 @@ export default function Navigation() {
 
               {/* Join Button - Fixed at bottom */}
               <a
-                href={EXTERNAL_LINKS.DISCORD}
+                href={EXTERNAL_LINKS.WHATS_APP}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
                 className="bg-dark-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-indigo-400 transition-colors shadow-[0_0_15px_rgba(99,102,241,0.4)] text-center"
               >
-                Join Discord
+                Join WhatsApp
               </a>
             </nav>
           </div>
