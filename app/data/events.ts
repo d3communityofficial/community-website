@@ -7,6 +7,7 @@ export interface PastEvent {
   status: string;
   link: string;
   venue: string;
+  image: string;
 }
 
 export interface UpcomingEvent {
@@ -18,6 +19,7 @@ export interface UpcomingEvent {
   status: string;
   rsvpUrl?: string;
   venue: string;
+  image: string;
 }
 
 export interface EventsData {
@@ -35,7 +37,8 @@ const eventsData: EventsData = {
       description: "Advanced topics in full-stack development and AI integration.",
       status: "completed",
       link: "https://d3community.in/meetup-5",
-      venue: "Yuniq, Chennai"
+      venue: "Yuniq, Chennai",
+      image: "/events/event-5.jpeg"
     },
     {
       id: "meetup-4",
@@ -45,7 +48,8 @@ const eventsData: EventsData = {
       description: "Building scalable applications with modern frameworks.",
       status: "completed",
       link: "https://d3community.in/meetup-4",
-      venue: "Yuniq, Chennai"
+      venue: "Yuniq, Chennai",
+      image: "/events/event-4.jpg"
     },
     {
       id: "meetup-3",
@@ -55,7 +59,8 @@ const eventsData: EventsData = {
       description: "Deep dive into React and Next.js best practices.",
       status: "completed",
       link: "https://d3community.in/meetup-3",
-      venue: "Kissflow, Chennai"
+      venue: "Kissflow, Chennai",
+      image: "/events/event-3.jpeg"
     },
     {
       id: "meetup-2",
@@ -65,7 +70,8 @@ const eventsData: EventsData = {
       description: "Introduction to AI tools for developers.",
       status: "completed",
       link: "https://d3community.in/meetup-2",
-      venue: "ZOOMINFO,Perungudi"
+      venue: "ZOOMINFO,Perungudi",
+      image: "/events/event-2.jpeg"
     },
     {
       id: "meetup-1",
@@ -75,7 +81,8 @@ const eventsData: EventsData = {
       description: "Kickoff event - Building the D3 Community.",
       status: "completed",
       link: "https://d3community.in/meetup-1",
-      venue: "Community Center, Bangalore"
+      venue: "Community Center, Bangalore",
+      image: "/events/event-1.jpeg"
     }
   ],
   upcomingEvents: [
@@ -87,7 +94,8 @@ const eventsData: EventsData = {
       description: "Deep dive into integrating LLMs with React. Production-grade patterns only.",
       status: "upcoming",
       rsvpUrl: "https://bento.me/d3community",
-      venue: "M2P Fintech, Chennai"
+      venue: "M2P Fintech, Chennai",
+      image: "/events/coming-soon.png"
     }
   ]
 };
