@@ -113,7 +113,7 @@ export default function PastEventCard() {
                   width: cardWidth,
                   marginRight: cardsPerView === 1 || index === pastEvents.length - 1 ? '0' : '1rem'
                 }}
-                aria-label={`${event.title} - ${event.formattedDate}`}
+                aria-label={`${event.title}`}
               >
                 {/* External link icon at top right */}
                 {event.link && (
@@ -129,7 +129,7 @@ export default function PastEventCard() {
                   <div className="absolute inset-0 -m-2 sm:-m-4 md:-m-6">
                     <Image
                       src={event.image}
-                      alt={`${event.title} - ${event.formattedDate}`}
+                      alt={`${event.title}`}
                       fill
                       className="object-contain p-4 sm:p-5 md:p-6"
                     />
