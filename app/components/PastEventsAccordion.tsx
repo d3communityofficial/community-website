@@ -213,7 +213,7 @@ export default function PastEventsAccordion({ events }: PastEventsAccordionProps
             <ChevronRight className="h-5 w-5" />
           </button>
 
-          <div className="mt-4 flex items-center justify-center gap-2">
+          <div className="mt-4 flex items-center justify-center gap-3">
             {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
               <button
                 key={idx}
@@ -222,13 +222,17 @@ export default function PastEventsAccordion({ events }: PastEventsAccordionProps
                   goToIndex(idx);
                   pauseWithResume();
                 }}
-                className={`h-2 w-2 rounded-full transition-colors ring-1 ring-dark-border/30 ${
-                  idx === safeIndex
-                    ? 'bg-dark-primary ring-dark-primary/40'
-                    : 'bg-dark-border hover:bg-dark-primary/40'
-                }`}
+                className="h-6 w-6 rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-dark-primary/50 cursor-pointer"
                 aria-label={`Go to slide ${idx + 1}`}
-              />
+              >
+                <span
+                  className={`h-2 w-2 rounded-full transition-colors ring-1 ring-dark-border/30 ${
+                    idx === safeIndex
+                      ? 'bg-dark-primary ring-dark-primary/40'
+                      : 'bg-dark-border hover:bg-dark-primary/40'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </>

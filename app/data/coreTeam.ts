@@ -85,13 +85,6 @@ const coreTeam: CoreTeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/mahaveer1013/',
   },
   {
-    id: 'd3-012',
-    name: 'Keerthana M G',
-    role: 'Organizer',
-    avatar: '/coreTeam/keerthana.jpeg',
-    linkedin: 'https://www.linkedin.com/in/keerthana-m-g-12ba59256/',
-  },
-  {
     id: 'd3-013',
     name: 'Vidyut B',
     role: 'Organizer',

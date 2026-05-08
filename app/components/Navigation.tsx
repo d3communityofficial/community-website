@@ -78,11 +78,11 @@ export default function Navigation() {
   return (
     <>
       {/* Desktop Navigation - Hidden on mobile */}
-      <nav className="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-50 nav-glass text-dark-text px-6 py-3 rounded-full border border-dark-nav-border shadow-[0_0_20px_rgba(0,0,0,0.5)] items-center gap-6">
+      <nav className="hidden md:flex md:flex-nowrap fixed bottom-6 left-1/2 -translate-x-1/2 z-50 nav-glass text-dark-text px-4 py-3 lg:px-6 rounded-full border border-dark-nav-border shadow-[0_0_20px_rgba(0,0,0,0.5)] items-center gap-3 lg:gap-6 max-w-[calc(100vw-2rem)]">
         <a
           href="#"
           onClick={(e) => handleNavClick(e, 'home')}
-          className={`font-bold flex items-center gap-2 transition-colors ${
+          className={`font-bold flex items-center gap-2 transition-colors whitespace-nowrap shrink-0 ${
             activeSection === 'home'
               ? 'nav-active'
               : 'text-dark-muted hover:text-dark-text'
@@ -101,7 +101,7 @@ export default function Navigation() {
             key={item.id}
             href={item.href}
             onClick={(e) => handleNavClick(e, item.id)}
-            className={`text-sm font-medium transition-colors ${
+            className={`text-sm font-medium transition-colors whitespace-nowrap shrink-0 ${
               activeSection === item.id
                 ? 'nav-active font-bold'
                 : 'text-dark-muted hover:text-dark-text'
@@ -115,7 +115,7 @@ export default function Navigation() {
           href={EXTERNAL_LINKS.WHATS_APP}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-dark-primary text-white px-4 py-1.5 rounded-full text-xs font-bold hover:bg-indigo-400 transition-colors shadow-[0_0_15px_rgba(99,102,241,0.4)]"
+          className="bg-dark-primary text-white px-3 py-1.5 lg:px-4 rounded-full text-xs font-bold hover:bg-indigo-400 transition-colors shadow-[0_0_15px_rgba(99,102,241,0.4)] whitespace-nowrap shrink-0"
         >
           Join
         </a>

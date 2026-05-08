@@ -2,7 +2,6 @@
 
 import { socialPlatforms } from '@/app/data/socials';
 import { useState, useRef } from 'react';
-import { useTheme } from '@/app/context/ThemeContext';
 
 interface TiltState {
   x: number;
@@ -17,7 +16,6 @@ function SocialCard({
   const [tilt, setTilt] = useState<TiltState>({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLAnchorElement>(null);
-  const { theme } = useTheme();
 
   const Icon = platform.icon;
 
@@ -120,9 +118,11 @@ function SocialCard({
                   backgroundColor: platform.color,
                   animationDelay: `${i * 0.3}s`,
                   animationDuration: '2s',
-                  opacity: isHovered ? 0.6 : 0,
-                  transform: `translate(${Math.cos((i * 120 * Math.PI) / 180) * 35}px, ${Math.sin((i * 120 * Math.PI) / 180) * 35}px)`,
-                  transition: 'opacity 0.3s',
+                  opacity: isHovered ? '0.6' : '0',
+                  transform: `translate(${(Math.cos((i * 120 * Math.PI) / 180) * 35).toFixed(1)}px, ${(Math.sin((i * 120 * Math.PI) / 180) * 35).toFixed(1)}px)`,
+                  transitionProperty: 'opacity',
+                  transitionDuration: '0.3s',
+                  transitionTimingFunction: 'ease',
                 }}
               />
             ))}
