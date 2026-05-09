@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Find your team — Digital Dreamers Den',
 };
 
-const IFRAME_SRC = 'https://digitaldreamersden.github.io/';
+const IFRAME_SRC = 'https://digitaldreamersden.github.io/d3-leader-board/';
 
 export default function FindMyTeamPage() {
   return (
