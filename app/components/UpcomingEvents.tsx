@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import type { UpcomingEvent } from '../data/events';
 
-const PLACEHOLDER_IMAGE = '/events/comingsoon.png';
+const PLACEHOLDER_IMAGE = '/events/coming_soon.png';
 
 interface UpcomingEventsProps {
   events: UpcomingEvent[];
@@ -18,7 +18,7 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
           href={'https://digitaldreamersden.in/luma'}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-[459px] max-w-full rounded-2xl overflow-hidden cursor-pointer"
+          className="relative block h-full w-full rounded-2xl overflow-hidden cursor-pointer"
           aria-label={'Subscribe for upcoming events'}
         >
           <Image

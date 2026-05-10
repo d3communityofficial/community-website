@@ -28,6 +28,16 @@ export interface EventsData {
 const eventsData: EventsData = {
   pastEvents: [
     {
+      id: 'meetup-7',
+      date: '2026-05-09',
+      title: 'Meetup 7',
+      description: 'AI in the real world - Use cases and best practices.',
+      status: 'completed',
+      link: 'https://digitaldreamersden.in/meetup-7',
+       venue: 'Yuniq, Chennai',
+      image: '/events/event-7.jpeg',
+    },
+    {
       id: 'meetup-6',
       date: '2026-03-28',
       title: 'Digital Dreamers Den (D3) Meetup #6',
@@ -109,18 +119,7 @@ const eventsData: EventsData = {
       image: '/events/event-1.jpeg',
     },
   ],
-  upcomingEvents: [
-    {
-      id: 'meetup-7',
-      date: '2026-05-09',
-      title: 'Meetup 7',
-      description: 'AI in the real world - Use cases and best practices.',
-      status: 'upcoming',
-      rsvpUrl: 'https://digitaldreamersden.in/meetup-7',
-       venue: 'Yuniq, Chennai',
-      image: '/events/event-7.jpeg',
-    },
-  ],
+  upcomingEvents: [],
 };
 
 export default eventsData;

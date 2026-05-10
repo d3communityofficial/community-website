@@ -1,6 +1,13 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useState,
+  ReactNode,
+} from 'react';
 
 type Theme = 'light' | 'dark';
 
@@ -10,6 +17,9 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+/** Must match the HTML `data-theme` default and ThemeProvider's initial state (SSR + first client paint). */
+const DEFAULT_THEME: Theme = 'light';
 
 function resolveTheme(): Theme {
   if (typeof document !== 'undefined') {
@@ -30,11 +40,18 @@ function resolveTheme(): Theme {
     }
   }
 
-  return 'dark';
+  return DEFAULT_THEME;
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(resolveTheme);
+  const [theme, setTheme] = useState<Theme>(DEFAULT_THEME);
+
+  useLayoutEffect(() => {
+    // DOM/localStorage theme is applied by the inline script in layout before hydration; React state must start as
+    // DEFAULT_THEME on server and the first client render so markup matches. Single sync after paint is intentional.
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- post-hydration sync only
+    setTheme(resolveTheme());
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

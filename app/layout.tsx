@@ -6,6 +6,14 @@ import { ThemeProvider } from './context/ThemeContext';
 
 const GA_MEASUREMENT_ID = 'G-QCVVJ10Q0T';
 
+/** Canonical site URL for absolute OG/Twitter images. Override when deploying (e.g. GitHub Pages domain). */
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://digitaldreamersden.in';
+
+const siteTitle = 'Digital Dreamers Den (D3)';
+const siteDescription =
+  'A vibrant tech community bringing AI Full-Stack Developers together to build the future 🚀';
+
 const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
   subsets: ['latin'],
@@ -13,9 +21,34 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Digital Dreamers Den (D3)',
-  description:
-    'A vibrant tech community bringing AI Full-Stack Developers together to build the future 🚀',
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: '/',
+    siteName: 'Digital Dreamers Den',
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: '/full_logo.png',
+        width: 1307,
+        height: 600,
+        alt: 'Digital Dreamers Den — full logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: ['/full_logo.png'],
+  },
 };
 
 const themeInitializerScript = `
@@ -29,8 +62,8 @@ const themeInitializerScript = `
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.style.colorScheme = theme;
   } catch (_error) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.documentElement.style.colorScheme = 'dark';
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.style.colorScheme = 'light';
   }
 })();
 `;
@@ -41,9 +74,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" data-theme="dark" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" data-theme="light" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/logo_dark.png" type="image/png" sizes="48x48" />
+        <link rel="icon" href="/logo_blue.png" type="image/png" sizes="48x48" />
         <script dangerouslySetInnerHTML={{ __html: themeInitializerScript }} />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
