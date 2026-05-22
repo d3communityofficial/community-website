@@ -12,7 +12,7 @@ const siteUrl =
 
 const siteTitle = 'Digital Dreamers Den (D3)';
 const siteDescription =
-  'A vibrant tech community bringing AI Full-Stack Developers together to build the future 🚀';
+  'A vibrant tech community bringing AI and Full-Stack Engineers together to build the future 🚀';
 
 const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
