@@ -10,7 +10,7 @@ export const communityPartners = [
   },
   {
     logo: '/partners/ctq-talk.png',
-    url: 'https://share.google/RC14BQezajq2b38Kd',
+    url: 'https://ctotalk.in/',
     fixedBg: '#fff',
   },
   {
@@ -28,7 +28,7 @@ export const communityPartners = [
   },
   {
     logo: '/partners/chennai-react.png',
-    url: 'https://share.google/wzG7ph6LuUjTJ0QuT',
+    url: 'https://chennaireact.in/',
   },
   {
     logo: '/partners/vueverse.png',
