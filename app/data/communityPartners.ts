@@ -22,16 +22,7 @@ export const communityPartners = [
     url: 'https://fossunited.org/c/chennai',
   },
   {
-    logo: '/partners/nextjs-india.png',
-    url: 'https://nextjs.org',
-    fixedBg: '#000',
-  },
-  {
     logo: '/partners/chennai-react.png',
     url: 'https://chennaireact.in/',
-  },
-  {
-    logo: '/partners/vueverse.png',
-    url: 'https://vueverse.com',
   },
 ];

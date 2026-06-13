@@ -119,7 +119,18 @@ const eventsData: EventsData = {
       image: '/events/event-1.jpeg',
     },
   ],
-  upcomingEvents: [],
+  upcomingEvents: [
+      {
+      id: 'meetup-8',
+      date: '2026-07-04',
+      title: 'Meetup 8',
+      description: 'AI and Full-Stack Development - The Journey Behind Every Product.',
+      status: 'upcoming',
+      rsvpUrl: 'https://digitaldreamersden.in/meetup-8',
+      venue: 'Freshworks, Chennai',
+      image: '/events/event-8.jpg',
+    },
+  ],
 };
 
 export default eventsData;
