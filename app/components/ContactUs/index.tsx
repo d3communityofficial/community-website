@@ -32,10 +32,10 @@ export default function ContactUs() {
             {' '}
             Email us at{' '}
             <a
-              href="mailto:d3communityofficial@gmail.com"
+              href="mailto:digitaldreamersdenofficial@gmail.com"
               className="text-dark-primary hover:underline font-medium"
             >
-              d3communityofficial@gmail.com
+              digitaldreamersdenofficial@gmail.com
             </a>{' '}
             with the subject line &quot;Partnership Inquiry&quot;
           </p>
