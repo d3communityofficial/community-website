@@ -1,1 +1,1 @@
-export const COMMUNITY_EMAIL = 'd3communityofficial@gmail.com';
+export const COMMUNITY_EMAIL = 'digitaldreamersdenofficial@gmail.com';
