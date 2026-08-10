@@ -3,6 +3,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import SocialLinksBar from './components/SocialLinksBar';
 import PastEventsAccordion from './components/PastEventsAccordion';
+import AttendeeTestimonials from './components/AttendeeTestimonials';
 import UpcomingEvents from './components/UpcomingEvents';
 import TeamSection from './components/TeamSection';
 import CommunityPartners from './components/CommunityPartners';
@@ -54,6 +55,8 @@ export default function Home() {
           <SectionHeader title="Past Events" icon={CalendarCheck} />
           <PastEventsAccordion events={eventsData.pastEvents ?? []} />
         </section>
+
+        <AttendeeTestimonials />
 
         {/* Sponsors */}
         <section id="sponsors" className="pt-16">

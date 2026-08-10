@@ -10,7 +10,7 @@ export const communityPartners = [
   },
   {
     logo: '/partners/ctq-talk.png',
-    url: 'https://share.google/RC14BQezajq2b38Kd',
+    url: 'https://ctotalk.in/',
     fixedBg: '#fff',
   },
   {
@@ -22,16 +22,7 @@ export const communityPartners = [
     url: 'https://fossunited.org/c/chennai',
   },
   {
-    logo: '/partners/nextjs-india.png',
-    url: 'https://nextjs.org',
-    fixedBg: '#000',
-  },
-  {
     logo: '/partners/chennai-react.png',
-    url: 'https://share.google/wzG7ph6LuUjTJ0QuT',
-  },
-  {
-    logo: '/partners/vueverse.png',
-    url: 'https://vueverse.com',
+    url: 'https://chennaireact.in/',
   },
 ];

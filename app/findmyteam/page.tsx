@@ -3,9 +3,21 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Find My Team | Digital Dreamers Den (D3)',
   description: 'Find your team — Digital Dreamers Den',
+  alternates: {
+    canonical: '/findmyteam',
+  },
+  openGraph: {
+    url: '/findmyteam',
+    title: 'Find My Team | Digital Dreamers Den (D3)',
+    description: 'Find your team — Digital Dreamers Den',
+  },
+  twitter: {
+    title: 'Find My Team | Digital Dreamers Den (D3)',
+    description: 'Find your team — Digital Dreamers Den',
+  },
 };
 
-const IFRAME_SRC = 'https://digitaldreamersden.github.io/';
+const IFRAME_SRC = 'https://digitaldreamersden.github.io/d3-leader-board/';
 
 export default function FindMyTeamPage() {
   return (

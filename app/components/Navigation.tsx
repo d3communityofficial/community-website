@@ -24,7 +24,8 @@ export default function Navigation() {
       for (let i = 0; i < NAVIGATION_SECTIONS.length; i++) {
         const section = document.getElementById(NAVIGATION_SECTIONS[i]);
         if (section) {
-          const sectionTop = section.offsetTop;
+          const sectionTop =
+            section.getBoundingClientRect().top + window.scrollY;
 
           if (scrollPosition >= sectionTop - SCROLL_CONFIG.SECTION_OFFSET) {
             currentSection = NAVIGATION_SECTIONS[i];

@@ -28,6 +28,26 @@ export interface EventsData {
 const eventsData: EventsData = {
   pastEvents: [
     {
+      id: 'meetup-8',
+      date: '2026-07-04',
+      title: 'Meetup 8',
+      description: 'AI and Full-Stack Development - The Journey Behind Every Product.',
+      status: 'upcoming',
+      link: 'https://digitaldreamersden.in/meetup-8',
+      venue: 'Freshworks, Chennai',
+      image: '/events/event-8.jpg',
+    },
+    {
+      id: 'meetup-7',
+      date: '2026-05-09',
+      title: 'Meetup 7',
+      description: 'AI in the real world - Use cases and best practices.',
+      status: 'completed',
+      link: 'https://digitaldreamersden.in/meetup-7',
+      venue: 'Yuniq, Chennai',
+      image: '/events/event-7.jpeg',
+    },
+    {
       id: 'meetup-6',
       date: '2026-03-28',
       title: 'Digital Dreamers Den (D3) Meetup #6',
@@ -110,16 +130,16 @@ const eventsData: EventsData = {
     },
   ],
   upcomingEvents: [
-    {
-      id: 'meetup-7',
-      date: '2026-05-09',
-      title: 'Meetup 7',
-      description: 'AI in the real world - Use cases and best practices.',
-      status: 'upcoming',
-      rsvpUrl: 'https://digitaldreamersden.in/meetup-7',
-       venue: 'Yuniq, Chennai',
-      image: '/events/event-7.jpeg',
-    },
+    //   {
+    //   id: 'meetup-8',
+    //   date: '2026-07-04',
+    //   title: 'Meetup 8',
+    //   description: 'AI and Full-Stack Development - The Journey Behind Every Product.',
+    //   status: 'upcoming',
+    //   rsvpUrl: 'https://digitaldreamersden.in/meetup-8',
+    //   venue: 'Freshworks, Chennai',
+    //   image: '/events/event-8.jpg',
+    // },
   ],
 };
 

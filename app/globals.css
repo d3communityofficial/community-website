@@ -203,6 +203,22 @@
   }
 }
 
+/* Logo follows html[data-theme], which the inline layout script sets before body paints — avoids light→dark flash */
+.app-logo-slot {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.app-logo-slot .app-logo-img {
+  display: none;
+}
+
+html[data-theme='light'] .app-logo-slot .app-logo-img--light,
+html[data-theme='dark'] .app-logo-slot .app-logo-img--dark {
+  display: block;
+}
+
 body {
   font-family: var(--font-jakarta), sans-serif;
   background-color: var(--color-bg);

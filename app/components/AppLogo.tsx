@@ -1,20 +1,27 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
-import { useTheme } from '@/app/context/ThemeContext';
 
 export default function AppLogo() {
-  const { theme } = useTheme();
-  const logoSrc = theme === 'dark' ? '/logo_dark.png' : '/logo.png';
+  const logoClass =
+    'app-logo-img absolute inset-0 h-full w-full object-contain';
 
   return (
-    <Image
-      src={logoSrc}
-      alt='D3 community logo'
-      width={48}
-      height={48}
-      className='w-full h-full'
-    />
+    <div className='app-logo-slot'>
+      <Image
+        src='/logo.png'
+        alt='D3 community logo'
+        width={48}
+        height={48}
+        className={`${logoClass} app-logo-img--light`}
+      />
+      <Image
+        src='/logo_dark.png'
+        alt='D3 community logo'
+        width={48}
+        height={48}
+        className={`${logoClass} app-logo-img--dark`}
+      />
+    </div>
   );
 }

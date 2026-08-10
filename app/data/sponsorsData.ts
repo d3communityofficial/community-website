@@ -4,6 +4,10 @@ const sponsorsData = [
     url: 'https://www.zoho.com/',
   },
   {
+    image: '/sponsors/freshworks.png',
+    url: 'https://www.freshworks.com/',
+  },
+  {
     image: '/sponsors/full.png',
     url: 'https://full.io/',
   },
@@ -11,6 +15,15 @@ const sponsorsData = [
     image: '/sponsors/rezoomex.webp',
     url: 'https://rezoomex.com/',
     fixedBg: '#fff',
+  },
+  {
+    image: '/sponsors/concert_idc.jpeg',
+    url: 'http://www.concertidc.com',
+  },
+  {
+    image: '/sponsors/wso2.webp',
+    url: 'https://wso2.com/',
+    fixedBg: '#ffffff',
   },
   {
     image: '/sponsors/m2p.png',
@@ -28,11 +41,7 @@ const sponsorsData = [
   {
     image: '/sponsors/yuniq.png',
     url: 'https://yuniq.co/',
-  },
-  {
-    image: '/sponsors/concert_idc.jpeg',
-    url: 'http://www.concertidc.com',
-  },
+  }
 ];
 
 export default sponsorsData;
