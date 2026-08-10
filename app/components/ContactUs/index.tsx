@@ -19,7 +19,7 @@ export default function ContactUs() {
               Have a question or want to collaborate? Reach out to us!
             </p>
             <a
-              href="mailto:d3communityofficial@gmail.com"
+              href="mailto:digitaldreamersdenofficial@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-3 bg-dark-primary hover:bg-dark-primary-light text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-dark-primary/50"
             >
               <MessageSquare className="w-5 h-5" />
