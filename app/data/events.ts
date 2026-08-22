@@ -130,16 +130,16 @@ const eventsData: EventsData = {
     },
   ],
   upcomingEvents: [
-    //   {
-    //   id: 'meetup-8',
-    //   date: '2026-07-04',
-    //   title: 'Meetup 8',
-    //   description: 'AI and Full-Stack Development - The Journey Behind Every Product.',
-    //   status: 'upcoming',
-    //   rsvpUrl: 'https://digitaldreamersden.in/meetup-8',
-    //   venue: 'Freshworks, Chennai',
-    //   image: '/events/event-8.jpg',
-    // },
+      {
+      id: 'meetup-9',
+      date: '2026-09-05',
+      title: 'Meetup 9',
+      description: 'AI and Full-Stack Development Meetup - Exploring the Future of Technology.',
+      status: 'upcoming',
+      rsvpUrl: 'https://digitaldreamersden.in/meetup-9',
+      venue: 'Freshworks, Chennai',
+      image: '/events/event-9.jpg',
+    },
   ],
 };
 
